@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:allowBackup="true"
@@ -29,10 +31,12 @@
             android:launchMode="singleTop"/>
         <activity
             android:name=".TodoTasks"
-            android:windowSoftInputMode="adjustPan" />
+
+            android:windowSoftInputMode="stateVisible|adjustResize|adjustPan"/>
 
         <service
             android:name=".MyNotifyService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="false"/>
     </application>
 

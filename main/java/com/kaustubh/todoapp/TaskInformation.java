@@ -1,5 +1,6 @@
 package com.kaustubh.todoapp;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class TaskInformation {
@@ -9,15 +10,17 @@ public class TaskInformation {
     private String date;
     private String day;
     private Integer pendingIntentNumber;
+    private Long millis;
 
 
-    public TaskInformation(String task, String time, String isAlarm, String date, String day,Integer pendingIntentNumber) {
+    public TaskInformation(String task, String time, String isAlarm, String date, String day,Integer pendingIntentNumber,Long millis) {
         this.task = task;
         this.time = time;
         this.isAlarm = isAlarm;
         this.date = date;
         this.day = day;
         this.pendingIntentNumber = pendingIntentNumber;
+        this.millis = millis;
     }
     public String getDay(){
         return day;
@@ -61,5 +64,11 @@ public class TaskInformation {
     }
     public Integer getPendingIntentNumber(){
         return pendingIntentNumber;
+    }
+    public Long getMillis(){
+        return this.millis;
+    }
+    public void setMillis(Long millis){
+        this.millis = millis;
     }
 }

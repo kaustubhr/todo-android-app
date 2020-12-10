@@ -52,7 +52,7 @@ public class MyNotifyService extends IntentService {
         NotificationManagerCompat mNotificationMgr = NotificationManagerCompat.from(this);
         if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O)
         {
-            NotificationChannel mChannel = new NotificationChannel(TodoTasks.CHANNEL_ID,TodoTasks.CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel mChannel = new NotificationChannel(TodoTasks.CHANNEL_ID,TodoTasks.CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
 
             AudioAttributes audioAttributes = new AudioAttributes.Builder()
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
@@ -61,6 +61,7 @@ public class MyNotifyService extends IntentService {
             mChannel.setSound(soundUri, audioAttributes);
             mNotificationMgr.createNotificationChannel(mChannel);
         }
+
 
         mNotificationMgr.notify(1,mBuilder.build());
         Log.d("MyNotifyService","inside MyNotifyService onHandleIntent");

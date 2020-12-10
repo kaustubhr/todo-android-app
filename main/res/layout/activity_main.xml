@@ -47,6 +47,7 @@
         android:ems="10"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textColorHint="#D3D3D3"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
